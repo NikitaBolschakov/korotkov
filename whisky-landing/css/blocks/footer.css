@@ -1,0 +1,124 @@
+.site-footer {
+  color: #e5dfd4;
+  background: #0c0c0b;
+}
+
+.site-footer__top {
+  display: flex;
+  min-height: 92px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand--footer .brand__name {
+  font-size: 18px;
+}
+
+.brand--footer .brand__caption {
+  color: #8f897e;
+}
+
+.site-footer__nav {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+
+.site-footer__nav a {
+  color: #b8b1a6;
+  font-size: 13px;
+  transition: color var(--transition);
+}
+
+.site-footer__nav a:hover,
+.site-footer__phone:hover {
+  color: var(--color-gold-light);
+}
+
+.site-footer__phone {
+  color: #d9d2c7;
+  font-size: 13px;
+  transition: color var(--transition);
+  white-space: nowrap;
+}
+
+.site-footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.site-footer__socials a {
+  display: flex;
+  width: 27px;
+  height: 27px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 50%;
+  color: #e4ddd1;
+  font-size: 10px;
+  font-weight: 700;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.site-footer__socials a:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold-light);
+}
+
+.site-footer__bottom {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  color: #8c867c;
+  font-size: 11px;
+}
+
+@media (max-width: 920px) {
+  .site-footer__top {
+    flex-wrap: wrap;
+    padding-block: 22px;
+  }
+
+  .site-footer__nav {
+    order: 4;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer__top {
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .site-footer__nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 13px 20px;
+  }
+
+  .site-footer__bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    padding-block: 13px;
+  }
+}
+
+@media (max-width: 440px) {
+  .site-footer__phone {
+    margin-left: auto;
+  }
+
+  .site-footer__nav {
+    gap: 12px 16px;
+  }
+}

@@ -1,0 +1,239 @@
+.site-header {
+  position: absolute;
+  z-index: 20;
+  inset: 0 0 auto;
+  min-height: 68px;
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+  color: #f8f5ee;
+  background: rgba(10, 10, 9, .42);
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, .28),
+    0 16px 38px rgba(0, 0, 0, .22),
+    0 1px 0 rgba(220, 174, 99, .16);
+}
+
+.site-header__inner {
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.brand {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  line-height: 1.08;
+}
+
+.brand__name {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: .045em;
+}
+
+.brand__caption {
+  margin-top: 3px;
+  color: var(--color-gold-light);
+  font-size: 10px;
+  letter-spacing: .07em;
+}
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(22px, 3vw, 48px);
+  margin-left: auto;
+}
+
+.site-header__link {
+  position: relative;
+  padding: 8px 0;
+  color: rgba(255, 255, 255, .83);
+  font-size: 13px;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.site-header__link::after {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+  height: 1px;
+  background: var(--color-gold);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.site-header__link:hover {
+  color: var(--color-gold-light);
+}
+
+.site-header__link:hover::after {
+  transform: scaleX(1);
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.site-header__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255, 255, 255, .86);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.site-header__phone svg {
+  width: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+}
+
+.site-header__menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 50%;
+  color: #fff;
+  background: transparent;
+}
+
+.site-header__menu-toggle span {
+  width: 16px;
+  height: 1px;
+  background: currentColor;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+@media (max-width: 920px) {
+  .site-header__inner {
+    gap: 16px;
+  }
+
+  .site-header__nav {
+    gap: 18px;
+  }
+
+  .site-header__actions {
+    gap: 12px;
+  }
+
+  .site-header__actions .button {
+    padding-inline: 15px;
+  }
+
+  .site-header__phone {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .site-header,
+  .site-header__inner {
+    min-height: 64px;
+  }
+
+  .site-header__menu-toggle {
+    display: flex;
+    order: 3;
+    flex: 0 0 auto;
+  }
+
+  .site-header__actions {
+    margin-left: auto;
+  }
+
+  .site-header__actions .button {
+    display: none;
+  }
+
+  .site-header__phone {
+    font-size: 0;
+  }
+
+  .site-header__phone svg {
+    width: 17px;
+  }
+
+  .site-header__nav {
+    position: fixed;
+    top: 64px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    min-height: 269px;
+    padding: 28px var(--container-gutter);
+    background: rgba(14, 14, 13, .98);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity var(--transition), transform var(--transition);
+
+    box-shadow:
+      0 15px 35px rgba(0, 0, 0, .45),
+      0 25px 55px rgba(0, 0, 0, .3),
+      0 1px 0 rgba(220, 174, 99, .2);
+  
+  }
+
+  .site-header__nav.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .site-header__link {
+    padding: 17px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+    font-size: 16px;
+  }
+
+  .site-header__link::after {
+    display: none;
+  }
+
+  .site-header__menu-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .site-header__menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .site-header__menu-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 440px) {
+  .brand__name {
+    font-size: 17px;
+  }
+
+  .brand__caption {
+    font-size: 7px;
+  }
+}

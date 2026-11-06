@@ -1,0 +1,15 @@
+@import url("./normalize.css");
+@import url("./vars.css");
+@import url("./globals.css");
+@import url("./blocks/header.css");
+@import url("./blocks/hero.css");
+@import url("./blocks/trust.css");
+@import url("./blocks/advantages.css");
+@import url("./blocks/included.css");
+@import url("./blocks/experience.css");
+@import url("./blocks/formats.css");
+@import url("./blocks/expert.css");
+@import url("./blocks/reviews.css");
+@import url("./blocks/faq.css");
+@import url("./blocks/contact.css");
+@import url("./blocks/footer.css");

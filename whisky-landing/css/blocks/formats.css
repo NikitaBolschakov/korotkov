@@ -1,0 +1,33 @@
+.formats { padding: 55px 0 68px; background: var(--color-cream); }
+.formats .section-heading { margin-bottom: 27px; }
+.formats__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 17px; }
+.format-card { overflow: hidden; border: 1px solid rgba(132,105,65,.15); border-radius: 8px; background: rgba(255,255,255,.32); transition: transform var(--transition), box-shadow var(--transition); }
+.format-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(37,29,18,.1); }
+.format-card__image { display: block; height: 178px; overflow: hidden; background: #282017; }
+.format-card__image img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.format-card:hover .format-card__image img { transform: scale(1.05); }
+.format-card__body { padding: 15px 15px 17px; }
+.format-card__body h3 { margin-bottom: 4px; color: #24211c; font-size: 20px; line-height: 1.15; }
+.format-card__body p { min-height: 37px; margin-bottom: 9px; color: #746e64; font-size: 10px; line-height: 1.55; }
+.format-card__link { display: inline-flex; align-items: center; gap: 10px; color: #8c6a37; font-size: 10px; font-weight: 600; }
+.format-card__link span { font-size: 16px; transition: transform var(--transition); }
+.format-card__link:hover span { transform: translateX(4px); }
+@media (max-width: 1240px) {
+  .format-card__image { height: 155px; }
+}
+@media (max-width: 920px) {
+  .formats__grid { grid-template-columns: repeat(2, 1fr); }
+  .format-card__image { height: 190px; }
+}
+@media (max-width: 768px) {
+  .formats { padding-block: 46px; }
+  .format-card__image { height: 170px; }
+}
+@media (max-width: 440px) {
+  .formats__grid { grid-template-columns: 1fr; gap: 12px; }
+  .format-card { display: grid; grid-template-columns: 42% 1fr; }
+  .format-card__image { height: 100%; min-height: 160px; }
+  .format-card__body { display: flex; flex-direction: column; justify-content: center; padding: 13px; }
+  .format-card__body h3 { font-size: 18px; }
+  .format-card__body p { min-height: 0; font-size: 9px; }
+}
